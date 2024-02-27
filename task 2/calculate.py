@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import os
-
+import math
 image_path = 'task 2\line.jpeg'
 def find_thinnest_line(image_path):
     # Check if the image file exists
@@ -117,3 +117,11 @@ concatenated_image = np.vstack((resized_ruler_image,rotated_image))
 
 output_file = os.path.join('task 2', 'output_final_image.jpg')
 cv2.imwrite(output_file, concatenated_image)
+ruler_range_min = 9 # Minimum value on the ruler scale
+ruler_range_max = 0  # Maximum value on the ruler scale
+
+# Determine the position of the thinnest point on the scale
+thinnest_point_normalized = vertical_line_x / ruler_width
+thinnest_point_value = thinnest_point_normalized * (ruler_range_max - ruler_range_min) + ruler_range_min
+
+print("Value corresponding to the thinnest point:",math.ceil( thinnest_point_value))
