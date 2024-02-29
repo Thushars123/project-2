@@ -97,7 +97,7 @@ output_file = os.path.join('task9','output_images','captured_rotated_image.jpg')
 cv2.imwrite(output_file, rotated_image)
 
 print(f"Output image saved as {output_file}")
-ruler_image=cv2.imread(r'task_2\ruler.jpg')
+ruler_image=cv2.imread(r'task2\ruler.jpg')
 rotated_image=cv2.imread(r'task9\output_images\captured_rotated_image.jpg')
 
 thinnest_point_x = (thinnest_point[0, 0] + thinnest_point[0, 2]) // 2

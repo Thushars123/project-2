@@ -37,13 +37,13 @@ def find_thinnest_line(image_path):
     x, y = (thinnest_point[0, 0] + thinnest_point[0, 2]) // 2, (thinnest_point[0, 1] + thinnest_point[0, 3]) // 2
     cv2.circle(img_thinnest, (x, y), 5, (0, 0, 255), -1)
 
-    output_file = os.path.join('task 2', 'output_thinnest_point_image.jpg')
+    output_file = os.path.join('task2', 'output_thinnest_point_image.jpg')
     cv2.imwrite(output_file, img_thinnest)
 
     return thinnest_point
 
     print(f"Output image saved as {output_file}")
-image_path = 'task 2\line.jpeg'
+image_path = 'task2\line.jpeg'
 
 try:
     # Find the thinnest point on the line

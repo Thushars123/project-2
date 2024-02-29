@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import os
 import math
-image_path = 'task_2\line.jpeg'
+image_path = 'task2\line.jpeg'
 def find_thinnest_line(image_path):
     # Check if the image file exists
     if not os.path.isfile(image_path):
@@ -39,7 +39,7 @@ def find_thinnest_line(image_path):
     cv2.circle(img_thinnest, (x, y), 5, (0, 0, 255), -1)
 
     # Display the image with the thinnest point
-    output_file = os.path.join('task_2', 'output_image.jpg')
+    output_file = os.path.join('task2', 'output_image.jpg')
     cv2.imwrite(output_file, img_thinnest)
 
     return thinnest_point
@@ -57,7 +57,7 @@ except ValueError as e:
     print(f"Error: {e}")
 
 # Load the image
-image = cv2.imread('task_2\output_image.jpg')
+image = cv2.imread('task2\output_image.jpg')
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # Apply edge detection (if needed)
@@ -93,12 +93,12 @@ rotation_matrix = cv2.getRotationMatrix2D(center, angle, 1.0)
 rotated_image = cv2.warpAffine(image, rotation_matrix, (w, h), flags=cv2.INTER_LINEAR)
 
 # Save the rotated image
-output_file = os.path.join('task_2', 'output_final.jpg')
+output_file = os.path.join('task2', 'output_final.jpg')
 cv2.imwrite(output_file, rotated_image)
 
 print(f"Output image saved as {output_file}")
-ruler_image=cv2.imread(r'task_2\ruler.jpg')
-rotated_image=cv2.imread(r'task_2\output_final.jpg')
+ruler_image=cv2.imread(r'task2\ruler.jpg')
+rotated_image=cv2.imread(r'task2\output_final.jpg')
 
 thinnest_point_x = (thinnest_point[0, 0] + thinnest_point[0, 2]) // 2
 ruler_width = ruler_image.shape[1]
@@ -115,7 +115,7 @@ resized_ruler_image = cv2.resize(ruler_image, (rotated_image.shape[1], ruler_ima
 
 concatenated_image = np.vstack((resized_ruler_image,rotated_image))
 
-output_file = os.path.join('task_2', 'output_final_image.jpg')
+output_file = os.path.join('task2', 'output_final_image.jpg')
 cv2.imwrite(output_file, concatenated_image)
 ruler_range_min = 9 # Minimum value on the ruler scale
 ruler_range_max = 0  # Maximum value on the ruler scale
