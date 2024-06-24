@@ -25,7 +25,7 @@ while True:
     elif k%256==32:
 
         print("Image"+str(count)+"saved")
-        file='C:/Users/hp/Desktop/project-2/task10/captured_image_saved/img'+str(count)+'.jpg'
+        file='C:/Users/hp/Desktop/project-2/task10-/captured_image_saved/img'+str(count)+'.jpg'
         cv2.imwrite(file,img)
         count +=1
         print("press esc to find the focal length of the captured image")
